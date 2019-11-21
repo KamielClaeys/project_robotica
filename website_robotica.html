@@ -5,35 +5,116 @@
         
         body{
             font-family: Verdana;
+<<<<<<< HEAD
             
             background-color: rgb(183,179,199);
                        }
+=======
+            background-image: url('achtergrond.png');
+             }
+        /* Style the tab */
+        .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+  background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+  background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+        }
+>>>>>>> 0693b34f47b2eec9e6e1b5aa3e7b986090129a02
         </style>
+       
     </head>
 
     <body>     
-        <h1 id = " top " > 
-        <p>
-                 <ul>
-                    <li><a href="bediening.html">bediening</a></li>
-                </ul>
-        </p>           
-        <h1>Project Robotica</h1>
-        <p>Dit is het projectrobotica van Klaas en Kamiel.</p>
-        <img src="./opstelling.jpg" alt="foto van de opstelling" width="403" height="302">
+     <!-- Tab links -->
+     <h1>Project Robotica</h1>
+         <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'info')">info</button>
+                <button class="tablinks" onclick="openCity(event, 'bediening')">bediening</button>
+                <button class="tablinks" onclick="openCity(event, 'visualisatie')">visualisatie</button>
+                </div>
+              
+              <!-- Tab content -->
+                <div id="info" class="tabcontent">
+                <h3>info</h3>
+                        <h1 id = " top " > 
+                              
+                        <h1>Project Robotica</h1>
+                        <p>Dit is het projectrobotica van Klaas en Kamiel.</p>
+                        <img src="./opstelling.jpg" alt="foto van de opstelling" width="403" height="302">
+                
+                       <p><a href="#doel">Doel</a></p>
+                       <p><a href="#werking">werking</a></p>
+                
+                        <h2 id = "doel" > Doel:</h2>
+                        <p>Ons doel is om de busjes die door de sortrteerunit getransporteerd zijn, op een pallet te plaatsen met behulp van van een robotarm.</p>
+                        <p>Vervolgens word het palletje opgenomen met behulp van een extra tool en wordt het volledige palletje geleegd in de trilkuip.</p>
+                        
+                        <h2 id = "werking"> Werking:</h2>
+                        <p>Het project bestaat uit 2 delen, het eerste deel is de toevoer van de busjes door het procces. het tweede deel is de robot die de busjes weer weglegd.</p>
+                
+                
+                        <p>het aantal geleverde busjes is :="webserver".aantal_busjes: </p>
+                        <p> <a href = "#top" > Top </a></p>
+                
+                </div>
+              
 
-       <p><a href="#doel">Doel</a></p>
-       <p><a href="#werking">werking</a></p>
+                 <div id="bediening" class="tabcontent">
+                <h3>bediening</h3>
+                        <p>Paris is the capital of France.</p>
+                 </div>
+              
+                 <div id="visualisatie" class="tabcontent">
+                <h3>visualisatie</h3>
+                        <p>Tokyo is the capital of Japan.</p>
+                 </div>
 
-        <h2 id = "doel" > Doel:</h2>
-        <p>Ons doel is om de busjes die door de sortrteerunit getransporteerd zijn, op een pallet te plaatsen met behulp van van een robotarm.</p>
-        <p>Vervolgens word het palletje opgenomen met behulp van een extra tool en wordt het volledige palletje geleegd in de trilkuip.</p>
-        
-        <h2 id = "werking"> Werking:</h2>
-        <p>Het project bestaat uit 2 delen, het eerste deel is de toevoer van de busjes door het procces. het tweede deel is de robot die de busjes weer weglegd.</p>
+                    <script>
+                        function openCity(evt, cityName) {
+                          var i, tabcontent, tablinks;
+                          tabcontent = document.getElementsByClassName("tabcontent");
+                          for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                          }
+                          tablinks = document.getElementsByClassName("tablinks");
+                          for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                          }
+                          document.getElementById(cityName).style.display = "block";
+                          evt.currentTarget.className += " active";
+                        }
+                        </script>
 
 
-        <p>het aantal geleverde busjes is :="webserver".aantal_busjes: </p>
-        <p> <a href = "#top" > Top </a></p>
+
     </body>
 </html>
