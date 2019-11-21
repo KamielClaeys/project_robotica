@@ -1,8 +1,9 @@
 <html>
     <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Project Robotica</title>
         <style>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         body{
             font-family: Verdana;
             
@@ -52,14 +53,12 @@
      <!-- Tab links -->
      <h1>Project Robotica</h1>
          <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'info')">info</button>
-                <button class="tablinks" onclick="openCity(event, 'bediening')">bediening</button>
-                <button class="tablinks" onclick="openCity(event, 'visualisatie')">visualisatie</button>
-                </div>
-              
-              <!-- Tab content -->
-                <div id="info" class="tabcontent">
-                <h3>info</h3>
+                <button class="tablinks"> <a href="website_robotica.html"> info</a> </button>
+                <button class="tablinks"> <a href="bediening.html"> bediening</a> </button>
+                <button class="tablinks"> <a href="visualisatie.html"> visualisatie</a> </button>
+        </div>
+     <!-- html info -->            
+        <h3>info</h3>
                         <h1 id = " top " > 
                               
                         <h1>Project Robotica</h1>
@@ -79,37 +78,5 @@
                 
                         <p>het aantal geleverde busjes is :="webserver".aantal_busjes: </p>
                         <p> <a href = "#top" > Top </a></p>
-                
-                </div>
-              
-
-                 <div id="bediening" class="tabcontent">
-                <h3>bediening</h3>
-                        <p>Paris is the capital of France.</p>
-                 </div>
-              
-                 <div id="visualisatie" class="tabcontent">
-                <h3>visualisatie</h3>
-                        <p>Tokyo is the capital of Japan.</p>
-                 </div>
-
-                    <script>
-                        function openCity(evt, cityName) {
-                          var i, tabcontent, tablinks;
-                          tabcontent = document.getElementsByClassName("tabcontent");
-                          for (i = 0; i < tabcontent.length; i++) {
-                            tabcontent[i].style.display = "none";
-                          }
-                          tablinks = document.getElementsByClassName("tablinks");
-                          for (i = 0; i < tablinks.length; i++) {
-                            tablinks[i].className = tablinks[i].className.replace(" active", "");
-                          }
-                          document.getElementById(cityName).style.display = "block";
-                          evt.currentTarget.className += " active";
-                        }
-                        </script>
-
-
-
     </body>
 </html>
