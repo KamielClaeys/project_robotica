@@ -9,7 +9,18 @@
             
             background-color: rgb(177,183,186);
             }
+      /* grid maken voor layout */
+      .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+            grid-gap: 2px;
+        }
 
+        .grid-item {
+            padding: 5px;
+            text-align: center;
+        }
         /* Style the tab */
         .tab {
       overflow: hidden;
@@ -53,14 +64,6 @@
   margin: 10px;
   padding: 10px;
 }
-
-/* centeren */ 
-      .centerimg { 
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;
-      }
         </style>
        
     </head>
@@ -81,13 +84,21 @@
         <h3>info</h3>
 
             
-                  <h1 id = " top " > 
+                  <h1 id = " top " > </h1>
 
-                        <h1>Project Robotica</h1>
-                        <p>Dit is het projectrobotica van Klaas en Kamiel.</p>
-                        <div class="centerimg">
-                        <img src="./opstelling 1.jpg" alt="foto van de opstelling" width="503" height="402">    
+                  <div class="grid-container">
+                        <div class="grid-item"></div>
+                        <div class="grid-item">
+                            <h1> Project Robotica</h1>
+                            <p>Dit is het projectrobotica van Klaas en Kamiel.</p>
                         </div>
+                        <div class="grid-item"></div>  
+                        <div class="grid-item"></div>
+                        <div class="grid-item">
+                            <img src="./opstelling 1.jpg" alt="foto van de opstelling" width="503" height="402">
+                        </div>
+                        <div class="grid-item"></div>
+                  </div>
                   
                        
                   <div class="tekstbloken">
