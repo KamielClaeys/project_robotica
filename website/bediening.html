@@ -4,7 +4,7 @@
 
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>Project Robotica bediening</title>
-                <style>
+        <style>
                 
                 body{
                     font-family: Verdana;
@@ -47,8 +47,38 @@
           border: 1px solid rgb(87, 14, 14);
           border-top: none;
                 }
-                </style>
-               
+                  /* layout knop*/
+                .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: rgb(255, 0, 0);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+          }
+          
+          .button:hover {background-color: #660000}
+          
+          .button:active {
+            background-color: #660000;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+          }
+        </style>
+          
+          
+
+
+
+
+
+
     </head>
     <body>
        <img src="Logo_Hogeschool_VIVES.jpg" style="float:right; width:55px; height:55px;"> 
@@ -64,7 +94,16 @@
         <!-- html info --> 
       <h3>bediening</h3> 
       <!-- tonen --> 
-            <p>het aantal geleverde busjes is :="webserver".aantal_busjes: </p>
+ <!-- knop --> 
+      
+
+       <p>het aantal geleverde busjes</p> 
+       
+       <p>="webserver".aantal_busjes: </p>
+
+
+      
+      <button class="button">STOP</button>
 
        <P>AWP_In_Variable    Name:="webserver".stop:</P>
                         <p>  Name:="Robot".aantal_busjes_op_pallet:</p>
