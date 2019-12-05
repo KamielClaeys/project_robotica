@@ -46,7 +46,6 @@
           border: 1px solid rgb(87, 14, 14);
           border-top: none;
         }
-
 /*tekst blok */
         .tekstbloken {
   background-color:rgba(230, 20, 20);
@@ -54,6 +53,14 @@
   margin: 20px;
   padding: 20px;
 }
+
+/* centeren */ 
+      .centerimg { 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+      }
         </style>
        
     </head>
@@ -63,10 +70,10 @@
      <!-- Tab links -->
      <h1>Project Robotica</h1>
          <div class="tab">
-                <button class="tablinks"> <a href="info.html"> info</a> </button>
-                <button class="tablinks"> <a href="bediening.html"> bediening</a> </button>
-                <button class="tablinks"> <a href="visualisatie.html"> visualisatie</a> </button>
-                <button class="tablinks"> <a href="fotoshow.html"> foto's</a> </button>             
+                <button class="tablinks"> <a style="color:white" href="info.html"> info</a> </button>
+                <button class="tablinks"> <a style="color:white" href="bediening.html"> bediening</a> </button>
+                <button class="tablinks"> <a style="color:white" href="visualisatie.html"> visualisatie</a> </button>
+                <button class="tablinks"> <a style="color:white" href="fotoshow.html"> foto's</a> </button>             
         </div>
      <!-- html info -->            
 
@@ -76,11 +83,13 @@
             
             
                   <h1 id = " top " > 
-                              
-                  <h1>Project Robotica</h1>
+
+                        <h1>Project Robotica</h1>
                         <p>Dit is het projectrobotica van Klaas en Kamiel.</p>
-                        <img src="./opstelling 1.jpg" alt="foto van de opstelling" width="503" height="402">
-                
+                        <div class="centerimg">
+                        <img src="./opstelling 1.jpg" alt="foto van de opstelling" width="503" height="402">    
+                        </div>
+                  
                        
                   <div class="tekstbloken">
                         <h2>Doel</h2>
