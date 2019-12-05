@@ -165,8 +165,9 @@
    <!-- dropdown knop -->      
                         <div class="dropdown">
                           <button class="dropbtn">Hoeveel busjes wenst u op een pallet</button>
+                          
                           <div class="dropdown-content">
-                          <a href="Name:="webserver.stop:> 1</a>  <!-- Waar # staat mss link naar waarde schrijven in plc -->
+                          <a href="Name:=".stop:> 1</a>  <!-- Waar # staat mss link naar waarde schrijven in plc -->
                           <a href="#"> 2</a>
                           <a href="#"> 3</a>
                           <a href="#"> 4</a>
@@ -184,19 +185,20 @@
 
 
 
-
-
-
-
-
+                  <div class="dropdown">
+                        <button class="dropbtn">Hoeveel busjes wenst u op een pallet</button>
                         <!-- AWP_In_Variable Name='"Data_block_1".ManualOverrideEnable' -->
                         <form method="post">
                          <select name='"Robot".Aantal_busjes_op_pallet'>
                          <option value=1>1</option>
                          <option value=2>2</option>
+                         <option value=3>3</option>
+                         <option value=4>4</option>
+                         <option value=5>5</option>
+                         <option value=6>6</option>
                          </select><input type="submit" value="doorsturen"> </form>
                         
-                     
+                  </div>  
            
     </body>
 </html>
