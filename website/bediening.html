@@ -1,11 +1,32 @@
 <html>
     <head>
+          
           <script type="text/javascript" src="script/jquery-2.1.3.min.js"></script>
 
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>Project Robotica bediening</title>
         <style>
-                
+                /* grid maken voor layout */
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: auto auto auto auto;
+                  grid-gap: 10px;
+                  background-color: e71212;
+                  padding: 10px;
+}
+
+                  .grid-container > div {
+                  background-color: rgba(255, 255, 255, 0.8);
+                  text-align: center;
+                  padding: 20px 0;
+                  font-size: 30px;
+}
+        /* Style the tab */
+        .tab {
+      overflow: hidden;
+      border: 1px solid #e71212;
+      background-color: #e71212;
+        }
                 body{
                     font-family: Verdana;
                     
@@ -81,6 +102,7 @@
                   width: 70px;
                   height: 25px;  
                   text-align: center;
+      
                   box-shadow: 0 5px #666;
                   transform: translateY(4px);
                  
@@ -124,17 +146,15 @@
                   a:active {
                     text-decoration: none;
                   }
-            </style>
-          
-          
-
-
-
-
-
-
+           </style>  
     </head>
+
+
+
+
+
     <body>
+
        <img src="Logo_Hogeschool_VIVES.jpg" style="float:right; width:55px; height:55px;"> 
         <!-- Tab links -->
         <h1>Project Robotica</h1>
@@ -145,29 +165,30 @@
                 <button class="tablinks"> <a style="color:white" href="fotoshow.html"> foto's</a> </button>
         </div>
 
-        <!-- html info --> 
+       
+        <!-- knoppen --> 
                   <h3>bediening</h3> 
-                       <!-- knop --> 
-                  <h2>STOP knop</h2>       
-
+        <!-- knop --> 
+             <div class="grid-container">
+                  <div>
+                        <h2>STOP knop</h2>     
                         <button class="button">STOP</button>
+                  </div>
 
-                  <h2>het aantal geleverde busjes</h2>       
+           
+                   <div>        
+                  <h2>Aantal geleverde busjes</h2>       
                   <h3 id="vak_aantal">="webserver".aantal_busjes:</h3>
-      
-     
-
-      
-
+            </div>            
                         
    <!-- dropdown knop -->      
-
+                  <div>
                   <h2>Hoeveel busjes wenst u op een pallet</h2>
                         <div class="dropdown">
                               <span><h3 id="vak_aantal">►</h3></span>
                               <div class="dropdown-content">
                                <!-- AWP_In_Variable Name='"Robot".Aantal_busjes_op_pallet' -->
-                  <form method="post">
+                         <form method="post">
                               <select name='"Robot".Aantal_busjes_op_pallet'>
                               <option value=1>1</option>
                               <option value=2>2</option>
@@ -180,13 +201,12 @@
                   </form>
                               </div>
                         </div>
-
+                  </div>
                  
                         
 
 
-
-
+                        
                  
             
       </body>
