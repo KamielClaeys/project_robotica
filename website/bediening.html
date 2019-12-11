@@ -193,7 +193,7 @@
                   <div>
                         <h2>STOP knop</h2>                            
                             <!-- AWP_In_Variable Name='"webserver".stop' -->
-                        <button class="button">STOP</button>
+                        <button class="button"><div id="stopknop">STOP</div></button>
                        
 
                         <!-- AWP_In_Variable Name='"webserver".stop' -->
@@ -201,19 +201,27 @@
                         
                                     <script>
                                                 $(document).ready(function(){
-                                                  $("button").click(function(){
-                                                    $.post("demo_test_post.asp",
+                                                  $("#stopknop").click(function(){
+                                                    $.post("variabel.html",
                                                     1
                                                     );
                                                   });
                                                 });
                                                 <h3 id="vak_aantal">:="webserver".stop:</h3>
                                      </script>
-
+      <script>
+            $(document).ready(function(){
+              $.get("variabel.html",function(result){
+                var data=result.split("\n");
+                $("#stop").text(data[3]);
+              });
+              
+            })
+            </script>
                          
 
 
-                                          <h3 id="vak_aantal">:="webserver".stop:</h3>
+                                          <h3 id="vak_aantal"><div id="stop"></div></h3>
                         </form>
                   </div>
 
