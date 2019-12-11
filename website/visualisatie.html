@@ -1,7 +1,6 @@
 <html>
     <head>
-            <script type="text/javascript" src="script/jquery-2.1.3.min.js"></script>    
-            <script type="text/javascript" src="script/s7_framework_0.1.7.js"></script>
+            <script src="jquery-3.4.1.min.js"></script>    
             <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>Project Robotica</title>
                 <style>
@@ -96,12 +95,14 @@
         <!-- html info --> 
         <h3>visualisatie</h3>
 
+            <p id="waarden"></p>
+            
       <script>
       $(document).ready(function(){
-        $ajax({type:"GET",url:"variabel.html",data:"",datatype:"text"})
-        .done(function(webdata){
-          alert(webdata);
-        })
+        $.get("variabel.html",function(result){
+          $("#waarden").data(result);
+        });
+        
       })
       </script>
 
