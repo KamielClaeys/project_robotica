@@ -95,12 +95,19 @@
         <!-- html info --> 
         <h3>visualisatie</h3>
 
-            <p id="waarden"></p>
+            <p id="waarde1"></p>
+            <p id="waarde2"></p>
+            <p id="waarde3"></p>
+            <p id="waarde4"></p>
             
       <script>
       $(document).ready(function(){
         $.get("variabel.html",function(result){
-          $("#waarden").data(result);
+          var data=result.split("\n");
+          $("#waarde1").text(data[0]);
+          $("#waarde2").text(data[1]);
+          $("#waarde3").text(data[2]);
+          $("#waarde4").text(data[3]);
         });
         
       })
