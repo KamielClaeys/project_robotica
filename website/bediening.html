@@ -189,12 +189,32 @@
        
         <!-- knoppen --> 
                   <h3>bediening</h3> 
-        <!-- knop --> 
+        <!-- STOP --> 
              <div class="grid-container">
                   <div>
                         <h2>STOP knop</h2>                            
-                            
+                            <!-- AWP_In_Variable Name='"webserver".stop' -->
                         <button class="button">STOP</button>
+                       
+
+                        <!-- AWP_In_Variable Name='"webserver".stop' -->
+                        <form method="post">
+                        
+                                    <script>
+                                                $(document).ready(function(){
+                                                  $("button").click(function(){
+                                                    $.post("demo_test_post.asp",
+                                                    1
+                                                    );
+                                                  });
+                                                });
+                                     </script>
+
+                         
+
+
+                                          <h3 id="vak_aantal">:="webserver".stop:</h3>
+                        </form>
                   </div>
 
            
