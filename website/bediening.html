@@ -121,17 +121,17 @@
                   /*dropdown knop*/
 
                   .dropdown {
-                  position: relative;
-                  display: inline-block;
+                   display: inline-block;
                   }
 
                   .dropdown-content {
                   display: none;
                   position: absolute;
                   background-color: #f9f9f9;
-                  min-width: 160px;
+                  min-width: 16px;
+                  max-height: 36px;
                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                  padding: 12px 16px;
+                  padding: 12px;
                   z-index: 1;
                   }
 
@@ -175,7 +175,7 @@
 
     <body>
             <div class="sticky">
-       <img src="Logo_Hogeschool_VIVES.jpg" style="float:right; width:80px; height:80px;"> 
+       <img src="https://github.com/KamielClaeys/project_robotica/blob/master/Logo_Hogeschool_VIVES.jpg?raw=true" style="float:right; width:80px; height:80px;"> 
         <!-- Tab links -->
         <h1>Project Robotica</h1>
         <div class="tab">
@@ -210,9 +210,8 @@
                                      </script>
       <script>
             $(document).ready(function(){
-              $.get("variabel.html",function(result){
-                var data=result.split("\n");
-                $("#stop").text(data[3]);
+              $.get("variabel_stop.html",function(result){
+                $("#stop").text(result);
               });
               
             })
@@ -244,20 +243,38 @@
                               <option value=6>6</option>
                               
                               </select><input type="submit" value="doorsturen"> 
-                  </form>
+                          </form>
                               </div>
                         </div>
-                        <h3 id="vak_aantal">:="Robot".Aantal_busjes_op_pallet:</h3>
+                        
+                  <script>
+                    $(document).ready(function(){
+                      $.get("variabel_aantal_busjes_op_pallet.html",function(result){
+                        $("#Aantal_busjes_op_pallet").text(result);
+                      });
+                      
+                      })
+                  </script>
+                        
+                        <h3 id="vak_aantal"><div id="Aantal_busjes_op_pallet"></div></h3>
                         
                         
 
                   </div>
-                 
+
+                  <script>
+                    $(document).ready(function(){
+                      $.get("variabel_aantal_busjes.html",function(result){
+                        $("#aantal_busjes").text(result);
+                      });
+                      
+                      })
+                  </script>
                         
                   <div>        
                               <h2>Aantal geleverde busjes</h2>       
-                              <h3 id="vak_aantal">:="webserver".aantal_busjes:</h3>
-                        </div>            
+                              <h3 id="vak_aantal"><div id="aantal_busjes"></div></h3>
+                  </div>            
 
 
                         
