@@ -199,17 +199,29 @@
   <div class="grid-container">
     <div>
       <h2>STOP knop</h2>
+      
       <!-- AWP_In_Variable Name='"webserver".stop' -->
-      <button class="button">
-        <div id="stopknop">STOP</div>
-      </button>
 
+      <tr>
+        <form method="post" action="">
+          <input type="text" name='"webserver".stop' maxlength="8" value="1" style="visibility: hidden;">
+          <hr style="visibility: hidden;">
+          <input class="button" type="submit" name='"webserver".stop' value="SET STOP">
 
-      <!-- AWP_In_Variable Name='"webserver".stop' -->
-      <form method="post">
+        </form>
+        <form method="post" action="">
+          <input type="text" name='"webserver".stop' maxlength="8" value="0" style="visibility: hidden;">
+          <hr style="visibility: hidden;">
+          <input class="button" type="submit" name='"webserver".stop' value="RESET STOP">
 
+        </form>
+      </tr>
+      <!-- 
+        <form method="post">
+        <input class="button" type="button" onclick="variabel_stop.html" value="STOP">
         <script>
-          $("#stopknop").click(function () {
+            $("#stopknop").click(function () {
+
             $.post("variabel_stop.html",
               1
             );
@@ -217,25 +229,25 @@
 
         </script>
         </form>
-        <script>
-          $(document).ready(function () {
-            setInterval(function () {
-              $.get("variabel_proces_actief.html", function (result) {
-                $("#stop").text(result);
-              });
-            }, 500);
+      -->
+      <script>
+        $(document).ready(function () {
+          setInterval(function () {
+            $.get("variabel_proces_actief.html", function (result) {
+              $("#stop").text(result);
+            });
+          }, 500);
+        });
+      </script>
 
 
 
-          });
-        </script>
+      <h3 id="vak_aantal">
+        <div id="stop"></div>
+      </h3>
+      <h3>1 = Proces is actief</h3>
+      <h3>0 = Proces is niet actief</h3>
 
-
-
-        <h3 id="vak_aantal">
-          <div id="stop"></div>
-        </h3>
-      
     </div>
 
 

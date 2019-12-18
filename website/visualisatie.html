@@ -1,153 +1,158 @@
 <html>
-    <head>
-            <script src="jquery-3.4.1.min.js"></script>    
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-                <title>Project Robotica</title>
-                <style>
+
+<head>
+  <script src="jquery-3.4.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Robotica</title>
+  <style>
+    /* sticky ( menubalk blijft staan)*/
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 5px;
+      background-color: rgb(177, 183, 186);
+      border: 2px solid rgb(177, 183, 186);
+    }
+
+    body {
+      font-family: Verdana;
+
+      background-color: rgb(177, 183, 186);
+    }
 
 
-                /* sticky ( menubalk blijft staan)*/
-                div.sticky {
-                  position: -webkit-sticky;
-                  position: sticky;
-                  top: 0;
-                  padding: 5px;
-                  background-color: rgb(177,183,186);
-                  border: 2px solid rgb(177,183,186);
-                  }
-                body{
-                    font-family: Verdana;
-                    
-                    background-color: rgb(177,183,186);
-                               }
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #e71212;
+      background-color: #e71212;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: rgb(87, 14, 14);
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: rgb(230, 20, 20);
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid rgb(87, 14, 14);
+      border-top: none;
+    }
+
+    /* lay out links*/
+    a:link {
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:active {
+      text-decoration: none;
+    }
 
 
-                /* Style the tab */
-                .tab {
-          overflow: hidden;
-          border: 1px solid #e71212;
-          background-color: #e71212;
-                }
-        
-                /* Style the buttons inside the tab */
-                .tab button {
-          background-color: inherit;
-          float: left;
-          border: none;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-          font-size: 17px;
-                }
-        
-                /* Change background color of buttons on hover */
-                .tab button:hover {
-          background-color: rgb(87, 14, 14);
-                }
-        
-                /* Create an active/current tablink class */
-                .tab button.active {
-          background-color: rgb(230, 20, 20);
-                }
-        
-                /* Style the tab content */
-                .tabcontent {
-          display: none;
-          padding: 6px 12px;
-          border: 1px solid rgb(87, 14, 14);
-          border-top: none;
-                }
-                
-                /* lay out links*/
-                  a:link {
-                    text-decoration: none;
-                  }
+    .pallet {
+      width: 210px;
+      height: 300px;
+      position: absolute;
+      left: 200px;
+      top: 300px;
+      background-color: rgba(0, 0, 0, 0.50);
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 10px;
+      padding-left: 15px;
+      padding-top: 15px;
+    }
 
-                  a:visited {
-                    text-decoration: none;
-                  }
+    .pallettekst {
+      position: absolute;
+      left: 70px;
+      top: 200px;
+    }
 
-                  a:hover {
-                    text-decoration: none;
-                  }
+    .busje {
+      width: 75px;
+      height: 75px;
+      border-radius: 75px;
+      background-color: red;
+    }
+  </style>
 
-                  a:active {
-                    text-decoration: none;
-                  }
+</head>
 
-          
-                  .pallet {
-                        width: 210px;
-                        height: 300px;
-                        position: absolute;
-                        left:200px; top:300px;
-                        background-color: black;
-                        display: grid;
-                  grid-template-columns: auto auto;
-                  grid-gap: 10px;
-                  
-                      }
-                  .pallettekst{
-                        position: absolute;
-                        left:70px; top:200px;
-                  }
-                  .busje {
-                        width: 75px;
-                        height: 75px;
-                        border-radius: 75px;
-                        background-color: grey;
-                      }
-                     
-                 
-                </style>
-               
-    </head>
-    <body>
+<body>
 
-        <div class="sticky">
-      <img src="https://github.com/KamielClaeys/project_robotica/blob/master/Logo_Hogeschool_VIVES.jpg?raw=true" style="float:right; width:80px; height:80px;"> 
-        <!-- Tab links -->
-        <h1>Project Robotica</h1>
-        <div class="tab">
-                <button class="tablinks"> <a style="color:white" href="info.html"> info</a> </button>
-                <button class="tablinks"> <a style="color:white" href="bediening.html"> bediening</a> </button>
-                <button class="tablinks"> <a style="color:white" href="visualisatie.html"> visualisatie</a> </button>
-                <button class="tablinks"> <a style="color:white" href="fotoshow.html"> foto's</a> </button>
-                <button class="tablinks"> <a style="color:white" href="Demo.html"> Demo</a> </button>  
-              </div>
-            </div>
+  <div class="sticky">
+    <img src="https://github.com/KamielClaeys/project_robotica/blob/master/Logo_Hogeschool_VIVES.jpg?raw=true"
+      style="float:right; width:80px; height:80px;">
+    <!-- Tab links -->
+    <h1>Project Robotica</h1>
+    <div class="tab">
+      <button class="tablinks"> <a style="color:white" href="info.html"> info</a> </button>
+      <button class="tablinks"> <a style="color:white" href="bediening.html"> bediening</a> </button>
+      <button class="tablinks"> <a style="color:white" href="visualisatie.html"> visualisatie</a> </button>
+      <button class="tablinks"> <a style="color:white" href="fotoshow.html"> foto's</a> </button>
+      <button class="tablinks"> <a style="color:white" href="Demo.html"> Demo</a> </button>
+    </div>
+  </div>
 
-        <!-- html info --> 
-        <h3>visualisatie</h3>
+  <!-- html info -->
+  <h3>visualisatie</h3>
 
-            <p id="waarde1"></p>
-            <p id="waarde2"></p>
-            <p id="waarde3"></p>
-            <p id="waarde4"></p>
-            <div id="aantalbus">0</div>
-            <script>
-              $(document).ready(function () {
-                setInterval(function () {
-                  $.get("variabel_aantal_busjes.html", function (result) {
-                    var aantal_busjes=$("#aantalbus").text;
-                    for (let index = aantal_busjes; index < result; index++) {
-                     $("#pallet1").children().append("<div class=busje></div>")
-                      
-                    };
-                    $("#aantalbus").text(result);
-                  });
-                }, 500);
-    
-    
-    
-              });
-            </script>
-        <div class=pallettekst><h1>Aantal busjes op de pallet:</h1></div>
-        <div id="pallet1" class="pallet" >
-          
-        </div>
+  <div id="aantalbus">0</div>
+  <script>
+    $(document).ready(function () {
+      setInterval(function () {
+        $.get("variabel_aantal_busjes.html", function (result) {
+          var aantal_busjes = $("#aantalbus").text;
+
+          for (aantal_busjes; aantal_busjes < result; aantal_busjes++) {
+            $.get("#pallet1", function (result) {
+              result.children().append("<div class=busje> </div>");
+            });
+          };
+          $("#aantalbus").text(result);
+        });
+      }, 500);
 
 
-    </body>
+    });
+  </script>
+  <div class=pallettekst>
+    <h1>Aantal busjes op de pallet:</h1>
+  </div>
+  <div id="pallet1" class="pallet">
+
+  </div>
+
+
+</body>
+
 </html>
