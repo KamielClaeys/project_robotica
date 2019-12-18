@@ -202,7 +202,7 @@
       
       <!-- AWP_In_Variable Name='"webserver".stop' -->
 
-      <tr>
+      
         <form method="post" action="">
           <input type="text" name='"webserver".stop' maxlength="8" value="1" style="visibility: hidden;">
           <hr style="visibility: hidden;">
@@ -215,21 +215,7 @@
           <input class="button" type="submit" name='"webserver".stop' value="RESET STOP">
 
         </form>
-      </tr>
-      <!-- 
-        <form method="post">
-        <input class="button" type="button" onclick="variabel_stop.html" value="STOP">
-        <script>
-            $("#stopknop").click(function () {
-
-            $.post("variabel_stop.html",
-              1
-            );
-          });
-
-        </script>
-        </form>
-      -->
+      
       <script>
         $(document).ready(function () {
           setInterval(function () {
@@ -245,8 +231,8 @@
       <h3 id="vak_aantal">
         <div id="stop"></div>
       </h3>
-      <h3>1 = Proces is actief</h3>
-      <h3>0 = Proces is niet actief</h3>
+      <h5>1 = Proces is actief</h5>
+      <h5>0 = Proces is niet actief</h5>
 
     </div>
 
