@@ -1,285 +1,311 @@
 <html>
-    <head>
-          
-            <script src="jquery-3.4.1.min.js"></script>  
 
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <title>Project Robotica bediening</title>
-        <style>
-                /* grid maken voor layout */
-                .grid-container {
-                  display: grid;
-                  grid-template-columns: auto auto auto;
-                  grid-gap: 10px;
-                  background-color: e71212;
-                  padding: 10px;
-}
+<head>
 
-                  .grid-container > div {
-                  background-color: rgba(255, 255, 255, 0.8);
-                  text-align: center;
-                  padding: 20px;
-                  font-size: 30px;
-}
+  <script src="jquery-3.4.1.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Robotica bediening</title>
+  <style>
+    /* grid maken voor layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 10px;
+      background-color: e71212;
+      padding: 10px;
+    }
+
+    .grid-container>div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px;
+      font-size: 30px;
+    }
 
 
 
-        /* Style the tab */
-        .tab {
+    /* Style the tab */
+    .tab {
       overflow: hidden;
       border: 1px solid #e71212;
       background-color: #e71212;
-        }
-                body{
-                    font-family: Verdana;
-                    
-                    background-color: rgb(177,183,186);
-                   }
-                /* Style the tab */
-                .tab {
-          overflow: hidden;
-          border: 1px solid #e71212;
-          background-color: #e71212;
-                }
-        
-                /* Style the buttons inside the tab */
-                .tab button {
-          background-color: inherit;
-          float: left;
-          border: none;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-          font-size: 17px;
-                }
-        
-                /* Change background color of buttons on hover */
-                .tab button:hover {
-          background-color: rgb(87, 14, 14);
-                }
-        
-                /* Create an active/current tablink class */
-                .tab button.active {
-          background-color: rgb(230, 20, 20);
-                }
-        
-                /* Style the tab content */
-                .tabcontent {
-          display: none;
-          padding: 6px 12px;
-          border: 1px solid rgb(87, 14, 14);
-          border-top: none;
-                }
-                  /* layout knop*/
-                .button {
-            display: inline-block;
-            padding: 15px 25px;
-            font-size: 24px;
-            cursor: pointer;
-            text-align: center;
-            
-            
-            color: #fff;
-            background-color: rgb(255, 0, 0);
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-          }
-          
-          .button:hover {background-color: #660000}
-          
-          .button:active {
-            background-color: #660000;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-          }
+    }
 
-          #vak_aantal
-           {
-                 
-                  border-radius: 15px;
-                  background: #73AD21;
-                  color: white;
-                  padding: 15px 25px; 
-                  width: 70px;
-                  height: 25px;  
-                  text-align: center;
-      
-                  box-shadow: 0 9px #999;
-                  transform: translateY(4px);
+    body {
+      font-family: Verdana;
 
-                  display: inline-block;
-                  font-size: 24px;
-                  border: none;
-                 
-           
-                 
-            }
-                     
+      background-color: rgb(177, 183, 186);
+    }
 
-                  /*dropdown knop*/
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #e71212;
+      background-color: #e71212;
+    }
 
-                  .dropdown {
-                   display: inline-block;
-                  }
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
 
-                  .dropdown-content {
-                  display: none;
-                  position: absolute;
-                  background-color: #f9f9f9;
-                  min-width: 16px;
-                  max-height: 36px;
-                   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                  padding: 12px;
-                  z-index: 1;
-                  }
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: rgb(87, 14, 14);
+    }
 
-                  .dropdown:hover .dropdown-content {
-                   display: block;
-                  }
-                  
-                  /* lay out links*/
-                  a:link {
-                    text-decoration: none;
-                  }
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: rgb(230, 20, 20);
+    }
 
-                  a:visited {
-                    text-decoration: none;
-                  }
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid rgb(87, 14, 14);
+      border-top: none;
+    }
 
-                  a:hover {
-                    text-decoration: none;
-                  }
-
-                  a:active {
-                    text-decoration: none;
-                  }
+    /* layout knop*/
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
 
 
- /* sticky ( menubalk blijft staan)*/
-                  div.sticky {
-                  position: -webkit-sticky;
-                  position: sticky;
-                  top: 0;
-                  padding: 5px;
-                  background-color: rgb(177,183,186);
-                  border: 2px solid rgb(177,183,186);
-                  }
-           </style>  
-    </head>
+      color: #fff;
+      background-color: rgb(255, 0, 0);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+
+    .button:hover {
+      background-color: #660000
+    }
+
+    .button:active {
+      background-color: #660000;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    #vak_aantal {
+
+      border-radius: 15px;
+      background: #73AD21;
+      color: white;
+      padding: 15px 25px;
+      width: 70px;
+      height: 25px;
+      text-align: center;
+
+      box-shadow: 0 9px #999;
+      transform: translateY(4px);
+
+      display: inline-block;
+      font-size: 24px;
+      border: none;
 
 
 
+    }
 
 
-    <body>
-            <div class="sticky">
-       <img src="https://github.com/KamielClaeys/project_robotica/blob/master/Logo_Hogeschool_VIVES.jpg?raw=true" style="float:right; width:80px; height:80px;"> 
-        <!-- Tab links -->
-        <h1>Project Robotica</h1>
-        <div class="tab">
-                <button class="tablinks"> <a style="color:white" href="info.html"> info</a> </button>
-                <button class="tablinks"> <a style="color:white" href="bediening.html"> bediening</a> </button>
-                <button class="tablinks"> <a style="color:white" href="visualisatie.html"> visualisatie</a> </button>
-                <button class="tablinks"> <a style="color:white" href="fotoshow.html"> foto's</a> </button>
-                <button class="tablinks"> <a style="color:white" href="Demo.html"> Demo</a> </button>  
-        </div>
-      </div>
-       
-        <!-- knoppen --> 
-                  <h3>bediening</h3> 
-        <!-- STOP --> 
-             <div class="grid-container">
-                  <div>
-                        <h2>STOP knop</h2>                            
-                            <!-- AWP_In_Variable Name='"webserver".stop' -->
-                        <button class="button"><div id="stopknop">STOP</div></button>
-                       
+    /*dropdown knop*/
 
-                        <!-- AWP_In_Variable Name='"webserver".stop' -->
-                        <form method="post">
-                        
-                                    <script>
-                                                $(document).ready(function(){
-                                                  $("#stopknop").click(function(){
-                                                    $.post("variabel.html",
-                                                    1
-                                                    );
-                                                  });
-                                                });
-                                     </script>
-      <script>
-            $(document).ready(function(){
-              $.get("variabel_stop.html",function(result){
+    .dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 16px;
+      max-height: 36px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 12px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* lay out links*/
+    a:link {
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+
+
+    /* sticky ( menubalk blijft staan)*/
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 5px;
+      background-color: rgb(177, 183, 186);
+      border: 2px solid rgb(177, 183, 186);
+    }
+  </style>
+</head>
+
+
+
+
+
+<body>
+  <div class="sticky">
+    <img src="https://github.com/KamielClaeys/project_robotica/blob/master/Logo_Hogeschool_VIVES.jpg?raw=true"
+      style="float:right; width:80px; height:80px;">
+    <!-- Tab links -->
+    <h1>Project Robotica</h1>
+    <div class="tab">
+      <button class="tablinks"> <a style="color:white" href="info.html"> info</a> </button>
+      <button class="tablinks"> <a style="color:white" href="bediening.html"> bediening</a> </button>
+      <button class="tablinks"> <a style="color:white" href="visualisatie.html"> visualisatie</a> </button>
+      <button class="tablinks"> <a style="color:white" href="fotoshow.html"> foto's</a> </button>
+      <button class="tablinks"> <a style="color:white" href="Demo.html"> Demo</a> </button>
+    </div>
+  </div>
+
+  <!-- knoppen -->
+  <h3>bediening</h3>
+  <!-- STOP -->
+  <div class="grid-container">
+    <div>
+      <h2>STOP knop</h2>
+      <!-- AWP_In_Variable Name='"webserver".stop' -->
+      <button class="button">
+        <div id="stopknop">STOP</div>
+      </button>
+
+
+      <!-- AWP_In_Variable Name='"webserver".stop' -->
+      <form method="post">
+
+        <script>
+          $("#stopknop").click(function () {
+            $.post("variabel.html",
+              1
+            );
+          });
+
+        </script>
+        <script>
+          $(document).ready(function () {
+            setInterval(function () {
+              $.get("variabel_stop.html", function (result) {
                 $("#stop").text(result);
               });
-              
-            })
-            </script>
-                         
+            }, 500);
 
 
-                                          <h3 id="vak_aantal"><div id="stop"></div></h3>
-                        </form>
-                  </div>
 
-           
-                   
-                        
-   <!-- dropdown knop -->      
-                  <div>
-                  <h2>Hoeveel busjes wenst u op een pallet</h2>
-                        <div class="dropdown">
-                              <span><h3 id="vak_aantal">--></h3></span>
-                              <div class="dropdown-content">
-                               <!-- AWP_In_Variable Name='"Robot".Aantal_busjes_op_pallet' -->
-                         <form method="post">
-                              <select name='"Robot".Aantal_busjes_op_pallet'>
-                              <option value=1>1</option>
-                              <option value=2>2</option>
-                              <option value=3>3</option>
-                              <option value=4>4</option>
-                              <option value=5>5</option>
-                              <option value=6>6</option>
-                              
-                              </select><input type="submit" value="doorsturen"> 
-                          </form>
-                              </div>
-                        </div>
-                        
-                  <script>
-                    $(document).ready(function(){
-                      $.get("variabel_aantal_busjes_op_pallet.html",function(result){
-                        $("#Aantal_busjes_op_pallet").text(result);
-                      });
-                      
-                      })
-                  </script>
-                        
-                        <h3 id="vak_aantal"><div id="Aantal_busjes_op_pallet"></div></h3>
-                        
-                        
-
-                  </div>
-
-                  <script>
-                    $(document).ready(function(){
-                      $.get("variabel_aantal_busjes.html",function(result){
-                        $("#aantal_busjes").text(result);
-                      });
-                      
-                      })
-                  </script>
-                        
-                  <div>        
-                              <h2>Aantal geleverde busjes</h2>       
-                              <h3 id="vak_aantal"><div id="aantal_busjes"></div></h3>
-                  </div>            
+          });
+        </script>
 
 
-                        
-                 
-            
-      </body>
+
+        <h3 id="vak_aantal">
+          <div id="stop"></div>
+        </h3>
+      </form>
+    </div>
+
+
+
+
+    <!-- dropdown knop -->
+    <div>
+      <h2>Hoeveel busjes wenst u op een pallet</h2>
+      <div class="dropdown">
+        <span>
+          <h3 id="vak_aantal">--></h3>
+        </span>
+        <div class="dropdown-content">
+          <!-- AWP_In_Variable Name='"Robot".Aantal_busjes_op_pallet' -->
+          <form method="post">
+            <select name='"Robot".Aantal_busjes_op_pallet'>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+              <option value=4>4</option>
+              <option value=5>5</option>
+              <option value=6>6</option>
+
+            </select><input type="submit" value="doorsturen">
+          </form>
+        </div>
+      </div>
+
+      <script>
+        $(document).ready(function () {
+          setInterval(function () {
+            $.get("variabel_aantal_busjes_op_pallet.html", function (result) {
+              $("#Aantal_busjes_op_pallet").text(result);
+            });
+          }, 500);
+
+
+
+        });
+      </script>
+
+      <h3 id="vak_aantal">
+        <div id="Aantal_busjes_op_pallet"></div>
+      </h3>
+
+
+
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        setInterval(function () {
+          $.get("variabel_aantal_busjes.html", function (result) {
+            $("#aantal_busjes").text(result);
+          });
+        }, 500);
+
+      })
+    </script>
+
+    <div>
+      <h2>Aantal geleverde busjes</h2>
+      <h3 id="vak_aantal">
+        <div id="aantal_busjes"></div>
+      </h3>
+    </div>
+
+
+
+
+
+</body>
+
 </html>

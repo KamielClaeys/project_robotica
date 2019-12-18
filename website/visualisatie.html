@@ -83,6 +83,10 @@
                         position: absolute;
                         left:200px; top:300px;
                         background-color: black;
+                        display: grid;
+                  grid-template-columns: auto auto;
+                  grid-gap: 10px;
+                  
                       }
                   .pallettekst{
                         position: absolute;
@@ -95,17 +99,7 @@
                         background-color: grey;
                       }
                      
-
-                      .grid-container {
-                  display: grid;
-                  grid-template-columns: auto auto;
-                  grid-gap: 10px;
-                  background-color: black;
-                  }
-
-                  .grid-container > div {
-                    font-size: 30px;
-                  }
+                 
                 </style>
                
     </head>
@@ -131,27 +125,27 @@
             <p id="waarde2"></p>
             <p id="waarde3"></p>
             <p id="waarde4"></p>
-            
-      <script>
-      $(document).ready(function(){
-        $.get("variabel.html",function(result){
-          var data=result.split("\n");
-          $("#waarde1").text(data[0]);
-          $("#waarde2").text(data[1]);
-          $("#waarde3").text(data[2]);
-          $("#waarde4").text(data[3]);
-        });
-        
-      })
-        </script>
+            <div id="aantalbus">0</div>
+            <script>
+              $(document).ready(function () {
+                setInterval(function () {
+                  $.get("variabel_aantal_busjes.html", function (result) {
+                    var aantal_busjes=$("#aantalbus").text;
+                    for (let index = aantal_busjes; index < result; index++) {
+                     $("#pallet1").children().append("<div class=busje></div>")
+                      
+                    };
+                    $("#aantalbus").text(result);
+                  });
+                }, 500);
+    
+    
+    
+              });
+            </script>
         <div class=pallettekst><h1>Aantal busjes op de pallet:</h1></div>
-        <div class=pallet class=gridcontainer>
-          <div class=busje></div>
-          <div class=busje></div>
-          <div class=busje></div>
-          <div class=busje></div>
-          <div class=busje></div>
-          <div class=busje></div>
+        <div id="pallet1" class="pallet" >
+          
         </div>
 
 
