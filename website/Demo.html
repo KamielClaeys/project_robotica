@@ -4,7 +4,21 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>Project Robotica</title>
                 <style>
+                  /* grid maken voor layout */
+                  .grid-container {
+                  display: grid;
+                  grid-template-columns: auto ;
+                  grid-gap: 10px;
+                  background-color: rgb(177,183,186);
+                  padding: 10px;
+                  }
 
+                  .grid-container> div {
+                  background-color: rgb(177,183,186);
+                  text-align: center;
+                  padding: 20px;
+                  font-size: 30px;
+                  }
 
                 /* sticky ( menubalk blijft staan)*/
                 div.sticky {
@@ -97,11 +111,15 @@
         <!-- html info --> 
         <h3>Demo</h3>
 
-        <video width="1000" style= "position: relative; align-content: center;" controls>
+        <div class="grid-container">
+          <div>
+        <video width="1000" controls; position: =center;>
+        
           <source src="https://github.com/KamielClaeys/project_robotica/raw/master/Project%20robotica_deel_1.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
-        
+           </div>
+               
 
 
     </body>
