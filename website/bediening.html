@@ -210,16 +210,17 @@
 
         <script>
           $("#stopknop").click(function () {
-            $.post("variabel.html",
+            $.post("variabel_stop.html",
               1
             );
           });
 
         </script>
+        </form>
         <script>
           $(document).ready(function () {
             setInterval(function () {
-              $.get("variabel_stop.html", function (result) {
+              $.get("variabel_proces_actief.html", function (result) {
                 $("#stop").text(result);
               });
             }, 500);
@@ -234,7 +235,7 @@
         <h3 id="vak_aantal">
           <div id="stop"></div>
         </h3>
-      </form>
+      
     </div>
 
 
